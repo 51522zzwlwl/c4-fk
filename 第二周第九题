@@ -1,0 +1,38 @@
+package work9;
+
+public interface Universe {
+    public void doAnything();
+}
+package work9;
+
+public abstract class star {
+    public abstract void shine();
+}
+package work9;
+
+public class sun extends star implements Universe{
+
+    public sun() {
+    }
+
+    @Override
+    public void doAnything()
+    {
+        System.out.println("太阳吸引着9大行星旋转");
+    }
+
+    @Override
+    public void shine() {
+        System.out.println("光照八分钟，到达地球");
+    }
+}package work9;
+
+public class text {
+    public static void main(String[] args) {
+        sun s = new sun();
+        s.shine();
+        Universe u = new sun();
+        u.doAnything();
+    }
+}
+
