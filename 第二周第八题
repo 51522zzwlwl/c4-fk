@@ -1,0 +1,41 @@
+package work8;
+
+abstract class a {
+    int numa = 10;
+    public abstract void showA();
+}
+package work8;
+
+abstract class b extends a{
+    int numb = 20;
+    public abstract void showB();
+}
+package work8;
+
+public class c extends b{
+    int numc = 30;
+
+    @Override
+    public void showA() {
+        System.out.println("A类中numa："+numa);
+    }
+
+    @Override
+    public void showB() {
+        System.out.println("B类中numb："+numb);
+    }
+    public void showC()
+    {
+        System.out.println("C类中numc："+numc);
+    }
+}
+package work8;
+
+public class total {
+    public static void main(String[] args) {
+        c c = new c();
+        c.showA();
+        c.showB();
+        c.showC();
+    }
+}
