@@ -1,0 +1,33 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class week4work5 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入数组元素个数：");
+        int n = in.nextInt();
+        System.out.println("请输入整数数组：");
+        int arr1[] = new int[n];
+        for(int i = 0; i < n; i++)
+        {
+            arr1[i] = in.nextInt();
+        }
+        System.out.println("数组中的主要元素为: "+majorElement(arr1));
+    }
+
+    public static int majorElement(int[] arr){
+
+        Arrays.sort(arr);
+        for (int i = 0; i <= arr.length/2; i++) {
+
+            for (int j = arr.length/2+i; j < arr.length; j++)
+            {
+                if(arr[i] == arr[j])
+                {
+                    return arr[i];
+                }
+            }
+        }
+        return -1;
+    }
+}
