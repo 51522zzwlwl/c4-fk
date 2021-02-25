@@ -1,0 +1,35 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class week3work4 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入字符串");
+        String s = in.nextLine();
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        map = wordCount(s);
+        for (Map.Entry<Character, Integer> entry : map.entrySet())
+        {
+            System.out.println(entry.getKey()+":"+entry.getValue());
+        }
+    }
+
+
+    public static Map<Character, Integer> wordCount(String s) {
+        Map<Character,Integer> map = new HashMap<Character,Integer>();
+        for(int i=0;i<s.length();i++)
+        {
+            if(!map.containsKey(s.charAt(i)))
+            {
+                map.put(s.charAt(i),1);
+            }
+            else
+            {
+                int count = map.get(s.charAt(i));
+                map.put(s.charAt(i),count+1);
+            }
+        }
+        return map;
+    }
+}
