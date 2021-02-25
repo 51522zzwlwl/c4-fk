@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class work1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入原字符串：");
+        String string = in.nextLine();
+        System.out.println("请输入子字符串：");
+        String pattern = in.nextLine();
+        System.out.println(string.indexOf(pattern));
+    }
+}
